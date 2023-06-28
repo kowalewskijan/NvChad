@@ -57,7 +57,16 @@ local options = {
       override_file_sorter = true,
       case_mode = "smart_case",
     },
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg", "bmp", "pdf", "gif"},
+      -- find command (defaults to `fd`)
+      find_cmd = "find"
+    }
   },
 }
+
+require('telescope').load_extension('media_files')
 
 return options
