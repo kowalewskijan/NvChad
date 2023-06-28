@@ -48,8 +48,18 @@ local options = {
       n = { ["q"] = require("telescope.actions").close },
     },
   },
-
+  extensions = {
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg", "bmp", "pdf", "gif"},
+      -- find command (defaults to `fd`)
+      find_cmd = "find"
+    }
+  },
   extensions_list = { "themes", "terms" },
 }
+
+require('telescope').load_extension('media_files')
 
 return options
